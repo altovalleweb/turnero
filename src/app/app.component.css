@@ -1,0 +1,18 @@
+
+
+.calendar-card {
+  width: 300px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 400px 100px 100px 100px;
+  grid-template-rows: 50px 50px 50px 50px ;
+}
+
+
+.item1 {
+  grid-row: 1 / span 6;
+}
+
+
