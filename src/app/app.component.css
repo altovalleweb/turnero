@@ -5,14 +5,20 @@
 }
 
 .grid-container {
+  margin-top: 5%;  
+  margin-left: 10%;
   display: grid;
-  grid-template-columns: 400px 100px 100px 100px;
-  grid-template-rows: 50px 50px 50px 50px ;
+  grid-template-columns: 30% 1fr;
+  
+}
+
+.item2{
+  display: grid;
+  grid-template-rows: auto auto;
 }
 
 
-.item1 {
-  grid-row: 1 / span 6;
-}
+
+
 
 

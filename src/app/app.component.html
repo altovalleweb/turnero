@@ -4,17 +4,21 @@
   <div class="item1">
     <mat-card class="calendar-card ">
       <mat-calendar [(selected)]="selected" [minDate]="minDate" [maxDate]="maxDate"></mat-calendar>
-    </mat-card>
-    <p>Selected date: {{selected}}</p>
+    </mat-card>    
   </div>
 
+  <div class="item2">
+    <div>
+      <h3>{{selected |fecha}}</h3>
+    </div>
 
-    <ng-container *ngFor="let horario of horariosDisponibles">
-      <div class="item2">
-        <button mat-stroked-button color="primary">{{horario.horario}}</button>
-      </div>
-    </ng-container>
+    <div>
+      <app-horarios [horariosDisponibles]="horariosDisponibles"></app-horarios>
+    </div>
 
+  </div>
+
+  
 
 
 

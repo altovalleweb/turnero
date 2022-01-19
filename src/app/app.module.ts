@@ -12,14 +12,18 @@ import { registerLocaleData } from '@angular/common';
 
 import {MatButtonModule} from '@angular/material/button';
 import {MatGridListModule} from '@angular/material/grid-list';
-
+import { HorariosComponent } from './horarios/horarios.component';
+import { FechaPipe } from './fecha.pipe';
+import {MatBadgeModule} from '@angular/material/badge';
 
 
 registerLocaleData(localeEs, 'es');
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HorariosComponent,
+    FechaPipe
   ],
   imports: [
     BrowserModule,
@@ -29,7 +33,8 @@ registerLocaleData(localeEs, 'es');
   MatMomentDateModule,
     MatCardModule,
     MatButtonModule,
-    MatGridListModule
+    MatGridListModule,
+    MatBadgeModule
   ],
   providers: [{ provide: LOCALE_ID, useValue: 'es' }],
   bootstrap: [AppComponent]
