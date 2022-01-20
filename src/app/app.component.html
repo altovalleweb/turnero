@@ -13,14 +13,16 @@
     </div>
 
     <div>
-      <app-horarios [horariosDisponibles]="horariosDisponibles"></app-horarios>
+      <app-horarios [horariosDisponibles]="horariosDisponibles" (seleccionHorarioEvent)="onSeleccionarHorario($event)"></app-horarios>
     </div>
 
   </div>
 
   
 
-
+  <div class="item3">
+    <app-formulario-reserva *ngIf="horarioSeleccionado" [fechaReserva]="selected" [horarioReserva]="horarioSeleccionado"></app-formulario-reserva>
+  </div>
 
 
 </div>

@@ -14,7 +14,7 @@
 
 .item2{
   display: grid;
-  grid-template-rows: auto auto;
+  grid-template-rows: 70px auto;
 }
 
 

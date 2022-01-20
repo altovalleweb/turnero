@@ -1,0 +1,18 @@
+<p>{{fechaReserva | fecha}} - {{horarioReserva?.horario}}</p>
+
+<form class="example-container" >
+    <mat-form-field appearance="fill">
+      <mat-label>Lugares</mat-label>
+      <mat-select>
+          <ng-container *ngFor="let lugar of lugaresDisponibles">
+            <mat-option [value]="lugar">{{lugar}}</mat-option>
+          </ng-container>
+
+
+      </mat-select>
+    </mat-form-field>
+  
+    
+  </form>
+
+  

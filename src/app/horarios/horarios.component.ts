@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+
 
 @Component({
   selector: 'app-horarios',
@@ -9,9 +10,14 @@ export class HorariosComponent implements OnInit {
 
   @Input() horariosDisponibles: any[] = [];
 
+  @Output() seleccionHorarioEvent: EventEmitter<any> = new EventEmitter();
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  onSeleccionarHorario(horario:any){
+    this.seleccionHorarioEvent.emit(horario)
+  }
 }

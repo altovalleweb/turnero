@@ -15,7 +15,10 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import { HorariosComponent } from './horarios/horarios.component';
 import { FechaPipe } from './fecha.pipe';
 import {MatBadgeModule} from '@angular/material/badge';
-
+import { FormularioReservaComponent } from './formulario-reserva/formulario-reserva.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatSelectModule} from '@angular/material/select';
+import {MatIconModule} from '@angular/material/icon';
 
 registerLocaleData(localeEs, 'es');
 
@@ -23,7 +26,8 @@ registerLocaleData(localeEs, 'es');
   declarations: [
     AppComponent,
     HorariosComponent,
-    FechaPipe
+    FechaPipe,
+    FormularioReservaComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +38,10 @@ registerLocaleData(localeEs, 'es');
     MatCardModule,
     MatButtonModule,
     MatGridListModule,
-    MatBadgeModule
+    MatBadgeModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatIconModule
   ],
   providers: [{ provide: LOCALE_ID, useValue: 'es' }],
   bootstrap: [AppComponent]
