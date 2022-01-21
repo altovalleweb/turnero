@@ -1,9 +1,22 @@
+
+  .horarios-card{
+    width: 80%;
+  }
+
 .nested-grid{
     display: grid;
     grid-template-columns: 150px 150px 150px;
-    grid-template-rows: repeat(7,40px);
+    grid-template-rows: repeat(6,40px);
     gap: 1em;
+    justify-content: center;
     
     
   }
+
+  .item1{
+    grid-column: 1/4;
+   
+  }
+
+
   

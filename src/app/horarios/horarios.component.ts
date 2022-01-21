@@ -9,6 +9,8 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 export class HorariosComponent implements OnInit {
 
   @Input() horariosDisponibles: any[] = [];
+  @Input() fechaSeleccionada: any;
+
 
   @Output() seleccionHorarioEvent: EventEmitter<any> = new EventEmitter();
 

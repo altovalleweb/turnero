@@ -8,12 +8,10 @@
   </div>
 
   <div class="item2">
-    <div>
-      <h3>{{selected |fecha}}</h3>
-    </div>
+   
 
     <div>
-      <app-horarios [horariosDisponibles]="horariosDisponibles" (seleccionHorarioEvent)="onSeleccionarHorario($event)"></app-horarios>
+      <app-horarios [horariosDisponibles]="horariosDisponibles" [fechaSeleccionada]="selected" (seleccionHorarioEvent)="onSeleccionarHorario($event)"></app-horarios>
     </div>
 
   </div>

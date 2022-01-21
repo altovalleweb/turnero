@@ -1,18 +1,73 @@
-<p>{{fechaReserva | fecha}} - {{horarioReserva?.horario}}</p>
 
-<form class="example-container" >
-    <mat-form-field appearance="fill">
-      <mat-label>Lugares</mat-label>
-      <mat-select>
-          <ng-container *ngFor="let lugar of lugaresDisponibles">
-            <mat-option [value]="lugar">{{lugar}}</mat-option>
-          </ng-container>
+  <p>{{fechaReserva | fecha}} - {{horarioReserva?.horario}}</p>
 
-
-      </mat-select>
-    </mat-form-field>
+  <form [formGroup]="reservasForm" novalidate (ngSubmit)="onSubmit($event)" >
+      <ng-container formArrayName="titularReserva">
+        <ng-container *ngFor="let titular of titularReservaField.controls; let i=index;">
+          <ng-container [formGroupName]="i">
   
-    
-  </form>
+  
+    <table class="example-full-width" cellspacing="10"><tr>
+      <td> <mat-icon class="person-icon">person</mat-icon></td>
+      <td><mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Nombre</mat-label>
+        <input matInput formControlName="nombre">
+      </mat-form-field></td>
+      <td>
+        <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>DNI</mat-label>
+        <input matInput formControlName="dni">
+      </mat-form-field></td>
+  
+      <td>
+        <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email">
+      </mat-form-field></td>
+    </tr></table>
+  
+  
+          </ng-container>
+          
+          
+          
+        </ng-container>
+      </ng-container>
+  
+      <ng-container formArrayName="adicionalesReserva">
+        <ng-container *ngFor="let adicional of adicionalesReservaField.controls; let i=index;">
+          <ng-container [formGroupName]="i">
+  
+  
+    <table class="example-full-width" cellspacing="10"><tr>
+      <td> <mat-icon class="person-icon">person</mat-icon></td>
+      <td><mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Nombre</mat-label>
+        <input matInput formControlName="nombre">
+      </mat-form-field></td>
+      <td>
+        <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>DNI</mat-label>
+        <input matInput formControlName="dni">
+      </mat-form-field></td>
+      <td> <mat-icon class="delete-btn" (click)="deleteAdicionalReserva(i)">
+        delete_forever</mat-icon></td>
+      
+    </tr></table>
+  
+  
+          </ng-container>
+          
+          
+          
+        </ng-container>
+      </ng-container>
+  
+      <button mat-mini-fab (click)="addAdicionalReserva()" title="Agregar reserva">
+        <mat-icon class="add-reserva-btn">add</mat-icon>
+    </button>
+    </form>
+
+
 
   

@@ -19,6 +19,9 @@ import { FormularioReservaComponent } from './formulario-reserva/formulario-rese
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatSelectModule} from '@angular/material/select';
 import {MatIconModule} from '@angular/material/icon';
+import { ReactiveFormsModule } from '@angular/forms';
+import {MatInputModule} from '@angular/material/input'; 
+import {MatDividerModule} from '@angular/material/divider';
 
 registerLocaleData(localeEs, 'es');
 
@@ -41,7 +44,9 @@ registerLocaleData(localeEs, 'es');
     MatBadgeModule,
     MatFormFieldModule,
     MatSelectModule,
-    MatIconModule
+    MatIconModule,
+    ReactiveFormsModule,
+    MatInputModule,MatDividerModule
   ],
   providers: [{ provide: LOCALE_ID, useValue: 'es' }],
   bootstrap: [AppComponent]

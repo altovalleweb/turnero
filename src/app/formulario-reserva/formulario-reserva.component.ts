@@ -1,4 +1,5 @@
 import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-formulario-reserva',
@@ -13,16 +14,72 @@ export class FormularioReservaComponent implements OnInit, OnChanges {
 
   lugaresDisponibles:number[]=[]
 
-  constructor() { }
+  titularReserva: FormGroup = this.fb.group({
+    dni:['',Validators.required],
+    nombre:['',Validators.required],
+    email:['',Validators.required]
+  })
+  reservasForm: FormGroup = this.fb.group({    
+    titularReserva : this.fb.array([this.titularReserva]),
+    adicionalesReserva: this.fb.array([])
+  })
+
+  constructor(private fb:FormBuilder) { 
+    
+  }
+
+  
 
   ngOnChanges(changes: SimpleChanges){
-    if(this.horarioReserva){
-      this.lugaresDisponibles = [ ...Array(this.horarioReserva.lugaresDisponibles).keys() ].map( i => i+1);
-    }
+   
+    this.adicionalesReservaField.clear(); 
   }
+
+  
 
 
   ngOnInit(): void {
+ 
+  }
+
+  get titularReservaField():FormArray {
+    return this.reservasForm.controls["titularReserva"] as FormArray;
+  }
+
+  get adicionalesReservaField():FormArray {
+    return this.reservasForm.controls["adicionalesReserva"] as FormArray;
+  }
+
+ 
+  addAdicionalReserva() {
+
+    if ( this.adicionalesReservaField.length+1<this.horarioReserva.lugaresDisponibles){
+      const adicionalReservaForm:FormGroup = this.fb.group( {
+        dni:['',Validators.required],
+      nombre:['',Validators.required]   }
+      );
+  
+      this.adicionalesReservaField.push(adicionalReservaForm);
+    }
+    else{
+      alert('Supera el máximo disponible')
+    }
+
+   
+  }
+
+  deleteAdicionalReserva(reservaIndex:number){
+    this.adicionalesReservaField.removeAt(reservaIndex);
+  }
+
+
+
+
+
+
+  onSubmit(event:Event){
+    event.preventDefault();
+
   }
 
 }
