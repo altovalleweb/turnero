@@ -53,16 +53,21 @@ export class FormularioReservaComponent implements OnInit, OnChanges {
  
   addAdicionalReserva() {
 
-    if ( this.adicionalesReservaField.length+1<this.horarioReserva.lugaresDisponibles){
-      const adicionalReservaForm:FormGroup = this.fb.group( {
-        dni:['',Validators.required],
-      nombre:['',Validators.required]   }
-      );
-  
-      this.adicionalesReservaField.push(adicionalReservaForm);
+    if(this.horarioReserva){
+      if ( this.adicionalesReservaField.length+1<this.horarioReserva.lugaresDisponibles){
+        const adicionalReservaForm:FormGroup = this.fb.group( {
+          dni:['',Validators.required],
+        nombre:['',Validators.required]   }
+        );
+    
+        this.adicionalesReservaField.push(adicionalReservaForm);
+      }
+      else{
+        alert('Supera el máximo disponible')
+      }
     }
     else{
-      alert('Supera el máximo disponible')
+      alert('Debe seleccionar un horario')
     }
 
    

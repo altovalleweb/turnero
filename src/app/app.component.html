@@ -1,25 +1,19 @@
 
-<div class="grid-container">
+<div class="contenedor">
 
-  <div class="item1">
-    <mat-card class="calendar-card ">
+  <div class="item-calendar">
+    <mat-card>
+     <mat-card-title>Agenda</mat-card-title>
       <mat-calendar [(selected)]="selected" [minDate]="minDate" [maxDate]="maxDate"></mat-calendar>
     </mat-card>    
   </div>
 
-  <div class="item2">
-   
-
-    <div>
+  <div class="item-horario">
       <app-horarios [horariosDisponibles]="horariosDisponibles" [fechaSeleccionada]="selected" (seleccionHorarioEvent)="onSeleccionarHorario($event)"></app-horarios>
     </div>
 
-  </div>
-
-  
-
-  <div class="item3">
-    <app-formulario-reserva *ngIf="horarioSeleccionado" [fechaReserva]="selected" [horarioReserva]="horarioSeleccionado"></app-formulario-reserva>
+  <div class="item-formulario">
+    <app-formulario-reserva  [fechaReserva]="selected" [horarioReserva]="horarioSeleccionado"></app-formulario-reserva>
   </div>
 
 

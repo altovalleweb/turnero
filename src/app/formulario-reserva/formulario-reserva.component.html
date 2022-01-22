@@ -1,4 +1,9 @@
 
+ <mat-card >
+<mat-card-title>Reserva</mat-card-title>
+
+<div class="reserva-nested-grid"> 
+
   <p>{{fechaReserva | fecha}} - {{horarioReserva?.horario}}</p>
 
   <form [formGroup]="reservasForm" novalidate (ngSubmit)="onSubmit($event)" >
@@ -7,7 +12,7 @@
           <ng-container [formGroupName]="i">
   
   
-    <table class="example-full-width" cellspacing="10"><tr>
+    <table><tr>
       <td> <mat-icon class="person-icon">person</mat-icon></td>
       <td><mat-form-field class="example-full-width" appearance="fill">
         <mat-label>Nombre</mat-label>
@@ -62,12 +67,16 @@
           
         </ng-container>
       </ng-container>
-  
+
+      <div style="text-align: center;">
       <button mat-mini-fab (click)="addAdicionalReserva()" title="Agregar reserva">
         <mat-icon class="add-reserva-btn">add</mat-icon>
     </button>
+      </div>
+  
+      
     </form>
 
-
-
+</div>
+ </mat-card >
   
