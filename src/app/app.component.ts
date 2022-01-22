@@ -24,6 +24,7 @@ export class AppComponent {
   {horario:'19:00 PM', lugaresDisponibles: 5},
   {horario:'19:30 PM', lugaresDisponibles: 0},
   {horario:'20:00 PM', lugaresDisponibles: 3},
-  {horario:'20:30 PM', lugaresDisponibles: 1}]
+  {horario:'20:30 PM', lugaresDisponibles: 1},
+  {horario:'21:00 PM', lugaresDisponibles: 6}]
 
 }
