@@ -1,26 +1,20 @@
 
-<div class="grid-container">
+<div class="contenedor">
 
-  <div class="item1">
-    <mat-card class="calendar-card ">
+  <div class="item-calendar">
+    <mat-card>
+     <mat-card-title>Agenda</mat-card-title>
       <mat-calendar [(selected)]="selected" [minDate]="minDate" [maxDate]="maxDate"></mat-calendar>
     </mat-card>    
   </div>
 
-  <div class="item2">
-    <div>
-      <h3>{{selected |fecha}}</h3>
+  <div class="item-horario">
+      <app-horarios [horariosDisponibles]="horariosDisponibles" [fechaSeleccionada]="selected" (seleccionHorarioEvent)="onSeleccionarHorario($event)"></app-horarios>
     </div>
 
-    <div>
-      <app-horarios [horariosDisponibles]="horariosDisponibles"></app-horarios>
-    </div>
-
+  <div class="item-formulario">
+    <app-formulario-reserva  [fechaReserva]="selected" [horarioReserva]="horarioSeleccionado"></app-formulario-reserva>
   </div>
-
-  
-
-
 
 
 </div>

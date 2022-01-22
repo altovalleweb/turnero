@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  selected!: Date | null;
+  selected= new Date(2022, 1, 9);
   title = 'turnero';
 
   minDate = new Date(2022, 1, 9);
@@ -27,4 +27,9 @@ export class AppComponent {
   {horario:'20:30 PM', lugaresDisponibles: 1},
   {horario:'21:00 PM', lugaresDisponibles: 6}]
 
+horarioSeleccionado:any
+
+  onSeleccionarHorario(event:any){
+    this.horarioSeleccionado=event
+  }
 }

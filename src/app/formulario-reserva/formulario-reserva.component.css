@@ -1,0 +1,14 @@
+  .person-icon{
+    color: green;
+  }
+
+  .delete-btn{
+    color:red
+  }
+
+  .reserva-nested-grid{
+    display: grid;
+    justify-content: center;
+    grid-template-columns: auto;
+  }
+  
