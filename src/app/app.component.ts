@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component,OnInit, AfterViewInit } from '@angular/core';
 
 
 @Component({
@@ -6,8 +6,10 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  selected= new Date(2022, 1, 9);
+
+
+export class AppComponent  {
+  selected=  new Date(2022, 1, 9);
   title = 'turnero';
 
   minDate = new Date(2022, 1, 9);
@@ -28,6 +30,8 @@ export class AppComponent {
   {horario:'21:00 PM', lugaresDisponibles: 6}]
 
 horarioSeleccionado:any
+
+
 
   onSeleccionarHorario(event:any){
     this.horarioSeleccionado=event
