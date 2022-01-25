@@ -4,16 +4,16 @@
   <div class="item-calendar">
     <mat-card>
      <mat-card-title>Agenda</mat-card-title>
-      <mat-calendar [(selected)]="selected" [minDate]="minDate" [maxDate]="maxDate"></mat-calendar>
+      <mat-calendar [(selected)]="selectedDate" [minDate]="minDate" [maxDate]="maxDate" (selectedChange)="onSelectDate($event)"></mat-calendar>
     </mat-card>    
   </div>
 
   <div class="item-horario">
-      <app-horarios [horariosDisponibles]="horariosDisponibles" [fechaSeleccionada]="selected" (seleccionHorarioEvent)="onSeleccionarHorario($event)"></app-horarios>
+      <app-horarios [horariosDisponibles]="horariosAMostrar" [fechaSeleccionada]="selectedDate" (seleccionHorarioEvent)="onSeleccionarHorario($event)"></app-horarios>
     </div>
 
   <div class="item-formulario">
-    <app-formulario-reserva  [fechaReserva]="selected" [horarioReserva]="horarioSeleccionado"></app-formulario-reserva>
+    <app-formulario-reserva  [fechaReserva]="selectedDate" [horarioReserva]="horarioSeleccionado" (reservaEvent)="onReserva($event)"></app-formulario-reserva>
   </div>
 
 

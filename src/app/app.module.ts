@@ -22,6 +22,8 @@ import {MatIconModule} from '@angular/material/icon';
 import { ReactiveFormsModule } from '@angular/forms';
 import {MatInputModule} from '@angular/material/input'; 
 import {MatDividerModule} from '@angular/material/divider';
+import { HttpClientModule } from '@angular/common/http';
+import { OperacionExitosaComponent } from './operacion-exitosa/operacion-exitosa.component';
 
 registerLocaleData(localeEs, 'es');
 
@@ -30,7 +32,8 @@ registerLocaleData(localeEs, 'es');
     AppComponent,
     HorariosComponent,
     FechaPipe,
-    FormularioReservaComponent
+    FormularioReservaComponent,
+    OperacionExitosaComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +49,8 @@ registerLocaleData(localeEs, 'es');
     MatSelectModule,
     MatIconModule,
     ReactiveFormsModule,
-    MatInputModule,MatDividerModule
+    MatInputModule,MatDividerModule,
+    HttpClientModule
   ],
   providers: [{ provide: LOCALE_ID, useValue: 'es' }],
   bootstrap: [AppComponent]

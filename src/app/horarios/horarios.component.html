@@ -8,7 +8,7 @@
           </div>
         <ng-container *ngFor="let horario of horariosDisponibles">
           <div>
-            <button mat-stroked-button color="primary" [matBadge]="horario.lugaresDisponibles" matBadgePosition="before" [matBadgeColor]="horario.lugaresDisponibles==0?'accent':'primary'" [disabled]="horario.lugaresDisponibles==0" (click)="onSeleccionarHorario(horario)">{{horario.horario}} </button>
+            <button mat-stroked-button color="primary" [matBadge]="horario.disponibilidad" matBadgePosition="before" [matBadgeColor]="horario.disponibilidad==0?'accent':'primary'" [disabled]="horario.disponibilidad==0" (click)="onSeleccionarHorario(horario)">{{horario.horario}} </button>
           </div>
         </ng-container>
 
