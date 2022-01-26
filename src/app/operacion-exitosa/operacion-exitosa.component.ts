@@ -12,11 +12,11 @@ export class OperacionExitosaComponent implements OnInit {
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    const routeParams = this.route.snapshot.paramMap;
-  
-     this.reservaID = routeParams.get('reservaId')
-  
     
+     this.route.params.subscribe(params => {
+      this.reservaID  = params['id'];
+    });
+
     }
 
 }

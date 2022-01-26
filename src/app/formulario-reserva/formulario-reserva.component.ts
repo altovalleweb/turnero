@@ -119,7 +119,7 @@ export class FormularioReservaComponent implements OnInit, OnChanges {
   onSubmit(event:Event){
     event.preventDefault();
 
-    if(this.reservasForm.valid && this.adicionalesReservaField.length+1<this.horarioReserva.disponibilidad){      
+    if(this.reservasForm.valid && this.adicionalesReservaField.length+1<=this.horarioReserva.disponibilidad){      
       this.reservaEvent.emit(this.reservasForm.value)
     }else{
       alert('Error. El total reservas superan la disponibilidad del horario!')

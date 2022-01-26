@@ -24,6 +24,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatDividerModule} from '@angular/material/divider';
 import { HttpClientModule } from '@angular/common/http';
 import { OperacionExitosaComponent } from './operacion-exitosa/operacion-exitosa.component';
+import { TurnosComponent } from './turnos/turnos.component';
 
 registerLocaleData(localeEs, 'es');
 
@@ -33,7 +34,8 @@ registerLocaleData(localeEs, 'es');
     HorariosComponent,
     FechaPipe,
     FormularioReservaComponent,
-    OperacionExitosaComponent
+    OperacionExitosaComponent,
+    TurnosComponent
   ],
   imports: [
     BrowserModule,

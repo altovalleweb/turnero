@@ -1,34 +1,8 @@
-
-
-
-
-.contenedor{
- width: 90%;
- max-width: 1000px;
- margin:20px auto;
-  display: grid;
-  grid-gap: 20px;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3,auto);
-  
+.container{
+  width: 90%;
+  max-width: 1000px;
+  margin:20px auto;
 }
-
-.contenedor .item-calendar{
-  grid-row: 1/3;
-}
-
-.contenedor .item-horario{
- grid-column: 2/4;
- grid-row: 1/3;
- 
-}
-
-.contenedor .item-formulario{
-  grid-column: 1/4;
- 
-  
- }
-
 
 
 

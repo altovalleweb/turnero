@@ -1,0 +1,15 @@
+.contenedor{
+ 
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3,auto);
+    justify-items: center;
+    
+  }
+
+ .icon-large{
+     font-size: 100px !important;
+     width: 100px !important;
+     color: forestgreen;
+ } 

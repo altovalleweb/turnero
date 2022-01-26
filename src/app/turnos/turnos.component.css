@@ -1,0 +1,37 @@
+
+.contenedor{
+ 
+     display: grid;
+     grid-gap: 20px;
+     grid-template-columns: repeat(3, 1fr);
+     
+     grid-template-areas: "agenda horario horario"
+                          "reserva reserva reserva";
+     
+   }
+   
+   .contenedor .item-calendar{
+    grid-area: agenda;
+  
+   }
+   
+   .contenedor .item-horario{
+    grid-area: horario;
+    
+   }
+   
+   .contenedor .item-formulario{
+     grid-area: reserva;
+    
+     
+    }
+   
+
+    @media screen and (max-width:768px){
+       
+        .contenedor{
+            grid-template-areas:    "agenda agenda agenda"
+                                    "horario horario horario"
+                                    "reserva reserva reserva";
+        }
+             }

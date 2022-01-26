@@ -4,36 +4,41 @@
 
 <div class="reserva-nested-grid">
 
-  <p>{{fechaReserva | fecha}} - {{horarioReserva?.horario}}</p>
-
-  <form [formGroup]="reservasForm" novalidate (ngSubmit)="onSubmit($event)" >
+  <div class="item-fecha">
+    Fecha: {{fechaReserva | fecha}} 
+  </div>
+  <div class="item-horario">
+    Horario: {{horarioReserva?.horario}}
+  </div>
+  
+  <div class="item-form">
+    <form [formGroup]="reservasForm" novalidate (ngSubmit)="onSubmit($event)" class="form-nested-grid">
       <ng-container formArrayName="titularReserva">
         <ng-container *ngFor="let titular of titularReservaField.controls; let i=index;">
           <ng-container [formGroupName]="i">
 
 
-    <table><tr>
-      <td> <mat-icon class="person-icon">person</mat-icon></td>
-      <td><mat-form-field class="example-full-width" appearance="fill">
+   
+      <div class="icon-person"> <mat-icon class="person-icon">person</mat-icon></div>
+      <div class="elem-form"><mat-form-field class="example-full-width" appearance="fill">
         <mat-label>Nombre y apellido</mat-label>
         <input matInput formControlName="nombre">
-      </mat-form-field></td>
-      <td>
+      </mat-form-field></div>
+      <div class="elem-form">
         <mat-form-field class="example-full-width" appearance="fill">
         <mat-label>DNI</mat-label>
         <input matInput formControlName="dni">
-      </mat-form-field></td>
+      </mat-form-field></div>
 
-      <td>
+      <div class="elem-form">
         <mat-form-field class="example-full-width" appearance="fill">
         <mat-label>Email</mat-label>
         <input matInput placeholder="reserva@example.com" formControlName="email">
-      </mat-form-field></td>
-    </tr></table>
+      </mat-form-field></div>
+    
 
 
           </ng-container>
-
 
 
         </ng-container>
@@ -44,21 +49,21 @@
           <ng-container [formGroupName]="i">
 
 
-    <table class="example-full-width" cellspacing="10"><tr>
-      <td> <mat-icon class="person-icon">person</mat-icon></td>
-      <td><mat-form-field class="example-full-width" appearance="fill">
+   
+      <div class="icon-person"> <mat-icon class="person-icon">person</mat-icon></div>
+      <div class="elem-form"><mat-form-field class="example-full-width" appearance="fill">
         <mat-label>Nombre</mat-label>
         <input matInput formControlName="nombre">
-      </mat-form-field></td>
-      <td>
+      </mat-form-field></div>
+      <div class="elem-form">
         <mat-form-field class="example-full-width" appearance="fill">
         <mat-label>DNI</mat-label>
         <input matInput formControlName="dni">
-      </mat-form-field></td>
-      <td> <mat-icon class="delete-btn" (click)="deleteAdicionalReserva(i)">
-        delete_forever</mat-icon></td>
+      </mat-form-field></div>
+      <div class="elem-form icon-trash"> <mat-icon class="delete-btn" (click)="deleteAdicionalReserva(i)">
+        delete_forever</mat-icon></div>
 
-    </tr></table>
+    
 
 
           </ng-container>
@@ -68,15 +73,18 @@
         </ng-container>
       </ng-container>
 
-      <div style="text-align: center;">
+      <div class="icon-add">
       <button type="button" mat-mini-fab (click)="addAdicionalReserva()" title="Agregar reserva">
         <mat-icon class="add-reserva-btn">add</mat-icon>
     </button>
       </div>
-      <div style="text-align: right;">
+      <div class="icon-commit">
       <button type="submit" mat-raised-button color="primary" [disabled]="reservasForm.invalid"  >Reservar</button>
     </div>
     </form>
+  </div>
+
+  
 
 </div>
  </mat-card >

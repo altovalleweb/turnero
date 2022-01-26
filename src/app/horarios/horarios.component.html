@@ -3,15 +3,35 @@
 <mat-card-title>Horarios</mat-card-title>
  <div class="nested-grid">  
    
-        <div class="item1">
+        <div class="itemFecha">
             <h2>{{fechaSeleccionada |fecha}}</h2>
           </div>
         <ng-container *ngFor="let horario of horariosDisponibles">
-          <div>
+          <div class="itemHorario">
             <button mat-stroked-button color="primary" [matBadge]="horario.disponibilidad" matBadgePosition="before" [matBadgeColor]="horario.disponibilidad==0?'accent':'primary'" [disabled]="horario.disponibilidad==0" (click)="onSeleccionarHorario(horario)">{{horario.horario}} </button>
           </div>
         </ng-container>
 
-  </div>    
+       
+        
+
+       
+
+  </div>  
+  <mat-card-footer> 
+    <div class="footer-grid">
+      <div>
+        <p>
+          <span matBadge="-" matBadgeOverlap="false">Lugares disponibles</span>            
+        </p>
+        
+    </div>  
+    <div >
+      <p>
+        <span matBadge="-" matBadgeOverlap="false" matBadgeColor="accent">Sin disponibilidad</span>            
+      </p>
+    </div>
+    </div>
+     </mat-card-footer>
 </mat-card>
   

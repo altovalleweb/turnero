@@ -1,0 +1,20 @@
+
+<div class="contenedor">
+
+    <div class="item-calendar">
+      <mat-card>
+       <mat-card-title>Agenda</mat-card-title>
+        <mat-calendar [(selected)]="selectedDate" [minDate]="minDate" [maxDate]="maxDate" (selectedChange)="onSelectDate($event)"></mat-calendar>
+      </mat-card>    
+    </div>
+  
+    <div class="item-horario">
+        <app-horarios [horariosDisponibles]="horariosAMostrar" [fechaSeleccionada]="selectedDate" (seleccionHorarioEvent)="onSeleccionarHorario($event)"></app-horarios>
+      </div>
+  
+    <div class="item-formulario">
+      <app-formulario-reserva  [fechaReserva]="selectedDate" [horarioReserva]="horarioSeleccionado" (reservaEvent)="onReserva($event)"></app-formulario-reserva>
+    </div>
+  
+  
+  </div>
