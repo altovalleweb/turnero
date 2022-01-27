@@ -29,6 +29,12 @@
    
   }
 
+  .horario-selected{
+    background: blue;
+    color: white;
+
+  }
+
   @media screen and (max-width:768px){
        
     .nested-grid{
@@ -40,4 +46,6 @@
      
     }
          }
+
+
   

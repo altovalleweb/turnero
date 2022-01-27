@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-operacion-exitosa',
@@ -8,15 +8,23 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class OperacionExitosaComponent implements OnInit {
 
-  reservaID:any
-  constructor(private route: ActivatedRoute) { }
+  reserva:any
+  constructor(private router:Router/* ,private route: ActivatedRoute */) {
+
+    const state = this.router.getCurrentNavigation()?.extras.state
+
+    if(state){
+      this.reserva ={id:state.id, ... state.reserva} 
+    }
+    
+    
+    
+    
+   }
 
   ngOnInit(): void {
-    
-     this.route.params.subscribe(params => {
-      this.reservaID  = params['id'];
-    });
 
-    }
+   
+       }
 
 }

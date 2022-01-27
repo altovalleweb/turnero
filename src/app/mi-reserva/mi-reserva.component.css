@@ -1,0 +1,18 @@
+.reserva-container{
+    display: grid;
+    margin-top: 30px;
+     grid-gap: 20px;
+     grid-template-columns: repeat(3,auto);    
+}
+
+.item-adicional-reserva{
+    grid-column: 2/-1;
+}
+
+
+@media screen and (max-width:768px){
+       
+    .item-datos-generales{grid-column: 1/-1;}
+    .item-contacto-reserva{grid-column: 1/-1;}
+    .item-adicional-reserva{grid-column: 1/-1;}
+}

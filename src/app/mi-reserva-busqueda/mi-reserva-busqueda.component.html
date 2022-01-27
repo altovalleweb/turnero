@@ -1,0 +1,35 @@
+
+<mat-card> 
+    <mat-card-title>Buscar Reserva</mat-card-title>
+    <form [formGroup]="busquedaForm" novalidate (ngSubmit)="onSubmit($event)" class="form-container">
+
+        <div class="busqueda-item">
+            <mat-form-field appearance="outline" style="width: 100%;">
+                <mat-label>Número de reserva</mat-label>
+                <input matInput formControlName="idReserva">
+                <mat-icon matSuffix>search</mat-icon>                
+              </mat-form-field>
+        </div>
+    
+        <div class="action-item">   
+            <button type="submit" mat-raised-button color="primary" [disabled]="!busquedaForm.valid" style="margin-top: 15px;">Buscar</button>
+        </div>
+
+    </form>
+
+
+</mat-card>
+
+<ng-container *ngIf="reserva; else sinReserva">
+    <app-mi-reserva [reserva]="reserva"></app-mi-reserva>
+</ng-container>
+
+<ng-template #sinReserva>
+    <ng-container *ngIf="busquedaRealizada">
+        <mat-card style="margin-top: 20px;">
+           <mat-icon style="color: blue;">error_outline</mat-icon> &nbsp;&nbsp; Reserva Inexistente!</mat-card>
+    </ng-container>
+    
+
+</ng-template>
+

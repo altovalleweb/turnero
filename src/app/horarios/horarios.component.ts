@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output } from '@angular/core';
 
 
 @Component({
@@ -6,7 +6,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
   templateUrl: './horarios.component.html',
   styleUrls: ['./horarios.component.css']
 })
-export class HorariosComponent implements OnInit {
+export class HorariosComponent implements OnInit,OnChanges {
 
   @Input() horariosDisponibles: any[] = [];
   @Input() fechaSeleccionada: any;
@@ -14,12 +14,20 @@ export class HorariosComponent implements OnInit {
 
   @Output() seleccionHorarioEvent: EventEmitter<any> = new EventEmitter();
 
+  indexSelected:number =-1;
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  onSeleccionarHorario(horario:any){
+  ngOnChanges(){
+    this.indexSelected=-1
+  }
+
+  onSeleccionarHorario(horario:any,index:number){
+    this.indexSelected=index
     this.seleccionHorarioEvent.emit(horario)
+
   }
 }

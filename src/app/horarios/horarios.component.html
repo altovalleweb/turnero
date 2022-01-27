@@ -6,9 +6,11 @@
         <div class="itemFecha">
             <h2>{{fechaSeleccionada |fecha}}</h2>
           </div>
-        <ng-container *ngFor="let horario of horariosDisponibles">
+        <ng-container *ngFor="let horario of horariosDisponibles; let i = index">
           <div class="itemHorario">
-            <button mat-stroked-button color="primary" [matBadge]="horario.disponibilidad" matBadgePosition="before" [matBadgeColor]="horario.disponibilidad==0?'accent':'primary'" [disabled]="horario.disponibilidad==0" (click)="onSeleccionarHorario(horario)">{{horario.horario}} </button>
+            <button mat-stroked-button color="primary" 
+            [ngClass]="{'horario-selected': i==indexSelected}"
+            [matBadge]="horario.disponibilidad" matBadgePosition="before" [matBadgeColor]="horario.disponibilidad==0?'accent':'primary'" [disabled]="horario.disponibilidad==0" (click)="onSeleccionarHorario(horario,i)">{{horario.horario}} </button>
           </div>
         </ng-container>
 
@@ -22,13 +24,13 @@
     <div class="footer-grid">
       <div>
         <p>
-          <span matBadge="_" matBadgeOverlap="false">Lugares disponibles</span>
+          <span matBadge=":-)" matBadgeOverlap="false">Lugares disponibles</span>
         </p>
 
     </div>
     <div >
       <p>
-        <span matBadge="_" matBadgeOverlap="false" matBadgeColor="accent">Sin disponibilidad</span>
+        <span matBadge=":-(" matBadgeOverlap="false" matBadgeColor="accent">Sin disponibilidad</span>
       </p>
     </div>
     </div>

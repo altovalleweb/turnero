@@ -5,10 +5,10 @@
 <div class="reserva-nested-grid">
 
   <div class="item-fecha">
-    Fecha: {{fechaReserva | fecha}} 
+    <b>Fecha:</b> {{fechaReserva | fecha}} 
   </div>
   <div class="item-horario">
-    Horario: {{horarioReserva?.horario}}
+    <b>Horario:</b> {{horarioReserva?.horario }}
   </div>
   
   <div class="item-form">
@@ -20,18 +20,18 @@
 
    
       <div class="icon-person"> <mat-icon class="person-icon">person</mat-icon></div>
-      <div class="elem-form"><mat-form-field class="example-full-width" appearance="fill">
+      <div class="elem-form"><mat-form-field class="example-full-width" appearance="outline">
         <mat-label>Nombre y apellido</mat-label>
         <input matInput formControlName="nombre">
       </mat-form-field></div>
       <div class="elem-form">
-        <mat-form-field class="example-full-width" appearance="fill">
+        <mat-form-field class="example-full-width" appearance="outline">
         <mat-label>DNI</mat-label>
         <input matInput formControlName="dni">
       </mat-form-field></div>
 
       <div class="elem-form">
-        <mat-form-field class="example-full-width" appearance="fill">
+        <mat-form-field class="example-full-width" appearance="outline">
         <mat-label>Email</mat-label>
         <input matInput placeholder="reserva@example.com" formControlName="email">
       </mat-form-field></div>
@@ -51,12 +51,12 @@
 
    
       <div class="icon-person"> <mat-icon class="person-icon">person</mat-icon></div>
-      <div class="elem-form"><mat-form-field class="example-full-width" appearance="fill">
+      <div class="elem-form"><mat-form-field class="example-full-width" appearance="outline">
         <mat-label>Nombre</mat-label>
         <input matInput formControlName="nombre">
       </mat-form-field></div>
       <div class="elem-form">
-        <mat-form-field class="example-full-width" appearance="fill">
+        <mat-form-field class="example-full-width" appearance="outline">
         <mat-label>DNI</mat-label>
         <input matInput formControlName="dni">
       </mat-form-field></div>

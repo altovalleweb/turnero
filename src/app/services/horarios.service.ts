@@ -20,4 +20,10 @@ export class HorariosService {
   saveReserva(reserva:any):Observable<any>{
     return this._http.post(`${environment.urlApi}/reservas`,reserva)
   }
+
+  getReserva(idReserva:string):Observable<any>{
+    return this._http.get(`${environment.urlApi}/reservas/${idReserva}`).pipe(
+      map( (data:any) => data.body)
+    )
+  }
 }

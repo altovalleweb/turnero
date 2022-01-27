@@ -25,6 +25,12 @@ import {MatDividerModule} from '@angular/material/divider';
 import { HttpClientModule } from '@angular/common/http';
 import { OperacionExitosaComponent } from './operacion-exitosa/operacion-exitosa.component';
 import { TurnosComponent } from './turnos/turnos.component';
+import { MiReservaComponent } from './mi-reserva/mi-reserva.component';
+import { MiReservaBusquedaComponent } from './mi-reserva-busqueda/mi-reserva-busqueda.component';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import { HeaderComponent } from './header/header.component';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatButtonToggleModule} from '@angular/material/button-toggle'; 
 
 registerLocaleData(localeEs, 'es');
 
@@ -35,7 +41,10 @@ registerLocaleData(localeEs, 'es');
     FechaPipe,
     FormularioReservaComponent,
     OperacionExitosaComponent,
-    TurnosComponent
+    TurnosComponent,
+    MiReservaComponent,
+    MiReservaBusquedaComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
@@ -52,7 +61,10 @@ registerLocaleData(localeEs, 'es');
     MatIconModule,
     ReactiveFormsModule,
     MatInputModule,MatDividerModule,
-    HttpClientModule
+    HttpClientModule,
+    MatToolbarModule,
+    MatMenuModule,
+    MatButtonToggleModule
   ],
   providers: [{ provide: LOCALE_ID, useValue: 'es' }],
   bootstrap: [AppComponent]

@@ -1,8 +1,9 @@
-<div class="contenedor">
+<div class="contenedor" *ngIf="reserva">
     <div><mat-icon class="icon-large"> insert_emoticon</mat-icon>
     </div>
     <div><h1>Operación realizada con exito!</h1></div>
-    <div><h2>Número de reserva: {{reservaID}}</h2></div>   
     
 </div>
+
+<app-mi-reserva [reserva]="reserva"></app-mi-reserva>
 
