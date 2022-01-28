@@ -34,9 +34,9 @@ horarioSeleccionado:any
   }
 
   onSelectDate(e:Date){
-       const formatedDate = moment(e).format('YYYY-MM-DD') 
+       const formatedDate = moment(e).format('YYYY-MM-DD')
        this.setAvailableTimes(formatedDate)
-       this.horarioSeleccionado=null      
+       this.horarioSeleccionado=null
   }
 
   setAvailableTimes(dateFormat:string){
@@ -52,7 +52,7 @@ horarioSeleccionado:any
       (reservaReturn)=>{
         console.log(reservaReturn)
         if(+reservaReturn.status==200){
-         // alert(`Reserva realizada con exito! Número de reserva: ${reservaReturn.body.reservaId}`)          
+         // alert(`Reserva realizada con exito! Número de reserva: ${reservaReturn.body.reservaId}`)
            // this.router.navigate(['/operacion-exitosa', reservaReturn.body.reservaId]);
            const reservaData = {id:reservaReturn.body.reservaId,reserva:event}
            this.router.navigateByUrl('/operacion-exitosa', { state: reservaData });
@@ -68,7 +68,7 @@ horarioSeleccionado:any
 
   getHorarios(){
     this.subscription= this._hs.getHorarios().subscribe(
-      (horariosR)=> { this.horariosDisponibles=horariosR.horarios; this.onSelectDate(this.selectedDate)},
+      (horariosR)=> { this.horariosDisponibles=horariosR; this.onSelectDate(this.selectedDate)},
       (error)=> console.error(error)
     )
   }

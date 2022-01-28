@@ -12,9 +12,7 @@ export class HorariosService {
   constructor(private _http: HttpClient) { }
 
   getHorarios(): Observable<any>{
-    return this._http.get(`${environment.urlApi}/horarios`).pipe(
-      map( (data:any) => data.body)
-    )
+    return this._http.get(`${environment.urlApi}/horarios`)
   }
 
   saveReserva(reserva:any):Observable<any>{
@@ -22,8 +20,6 @@ export class HorariosService {
   }
 
   getReserva(idReserva:string):Observable<any>{
-    return this._http.get(`${environment.urlApi}/reservas/${idReserva}`).pipe(
-      map( (data:any) => data.body)
-    )
+    return this._http.get(`${environment.urlApi}/reservas/${idReserva}`)
   }
 }
