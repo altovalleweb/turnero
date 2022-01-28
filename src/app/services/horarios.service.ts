@@ -22,4 +22,8 @@ export class HorariosService {
   getReserva(idReserva:string):Observable<any>{
     return this._http.get(`${environment.urlApi}/reservas/${idReserva}`)
   }
+
+  sendEmail(email:any):Observable<any>{
+    return this._http.post(`${environment.urlApi}/send-email`,email)
+  }
 }

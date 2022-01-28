@@ -4,9 +4,8 @@
 
 export const environment = {
   production: false,
-  //urlApi: 'http://localhost:3000'
-  urlApi: 'https://80m2sqz2u3.execute-api.sa-east-1.amazonaws.com'
-
+  urlApi: 'http://localhost:3000',
+  email: 'mmunoznqn.app@gmail.com'
 };
 
 /*

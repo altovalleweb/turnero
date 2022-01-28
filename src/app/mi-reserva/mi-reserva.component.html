@@ -1,24 +1,30 @@
 
 <mat-card style="margin-top: 40px;"> 
     <mat-card-title>Reserva</mat-card-title>
-    <div class="reserva-container">
-        <div class="item-datos-generales"><b>Número:</b> {{reserva.id}}</div>
-        <div class="item-datos-generales"><b>Día:</b> {{reserva.fecha | fecha}}</div>
-        <div class="item-datos-generales"><b>Horario:</b> {{reserva.horario}}</div>
-
-
-        <ng-container *ngFor="let titular of reserva.titularReserva">
-            <div class="item-contacto-reserva"><b>Titular reserva:</b> {{titular.nombre}}</div>
-            <div class="item-contacto-reserva"><b>Dni:</b> {{titular.dni}}</div>
-            <div class="item-contacto-reserva"><b>Email:</b> {{titular.email}}</div>
+    <ng-container *ngIf="reserva">
+        <div class="reserva-container">
+            <div class="item-datos-generales"><b>Número:</b> {{reserva.id}}</div>
+            <div class="item-datos-generales"><b>Día:</b> {{reserva.fecha | fecha}}</div>
+            <div class="item-datos-generales"><b>Horario:</b> {{reserva.horario}}</div>
+    
+    
+            <ng-container *ngFor="let titular of reserva.titularReserva">
+                <div class="item-contacto-reserva"><b>Titular reserva:</b> {{titular.nombre}}</div>
+                <div class="item-contacto-reserva"><b>Dni:</b> {{titular.dni}}</div>
+                <div class="item-contacto-reserva"><b>Email:</b> {{titular.email}}</div>
+            </ng-container>
+            
+    
+        <ng-container *ngFor="let adicionalReserva of reserva.adicionalesReserva">
+            <div class="item-contacto-reserva"><b>Nombre:</b> {{adicionalReserva.nombre}}</div>
+            <div class="item-adicional-reserva"><b>Dni:</b> {{adicionalReserva.dni}}</div>
         </ng-container>
-        
-
-    <ng-container *ngFor="let adicionalReserva of reserva.adicionalesReserva">
-        <div class="item-contacto-reserva"><b>Nombre:</b> {{adicionalReserva.nombre}}</div>
-        <div class="item-adicional-reserva"><b>Dni:</b> {{adicionalReserva.dni}}</div>
+    
+        </div>
     </ng-container>
+    
+<mat-card-footer style="margin-top: 40px;">
+    <button mat-raised-button color="warn" style="margin: 20px;" (click)="onEnviarEmail()"> <mat-icon >forward_to_inbox</mat-icon> &nbsp; &nbsp;Enviar a email de contacto</button>
 
-    </div>
-
+</mat-card-footer>
  </mat-card>       

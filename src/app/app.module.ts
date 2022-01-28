@@ -30,7 +30,9 @@ import { MiReservaBusquedaComponent } from './mi-reserva-busqueda/mi-reserva-bus
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { HeaderComponent } from './header/header.component';
 import {MatMenuModule} from '@angular/material/menu';
-import {MatButtonToggleModule} from '@angular/material/button-toggle'; 
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import { NumberOnlyDirective } from './number-only.directive';
+
 
 registerLocaleData(localeEs, 'es');
 
@@ -44,7 +46,9 @@ registerLocaleData(localeEs, 'es');
     TurnosComponent,
     MiReservaComponent,
     MiReservaBusquedaComponent,
-    HeaderComponent
+    HeaderComponent,
+    NumberOnlyDirective
+
   ],
   imports: [
     BrowserModule,
