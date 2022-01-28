@@ -50,18 +50,14 @@ horarioSeleccionado:any
   onReserva(event:any){
     this._hs.saveReserva(event).subscribe(
       (reservaReturn)=>{
-        console.log(reservaReturn)
-        if(+reservaReturn.status==200){
-         // alert(`Reserva realizada con exito! Número de reserva: ${reservaReturn.body.reservaId}`)
-           // this.router.navigate(['/operacion-exitosa', reservaReturn.body.reservaId]);
-           const reservaData = {id:reservaReturn.body.reservaId,reserva:event}
+        if(reservaReturn.reservaId){
+           const reservaData = {id:reservaReturn.reservaId,reserva:event}
            this.router.navigateByUrl('/operacion-exitosa', { state: reservaData });
         }else{
-          alert(`Error! ${reservaReturn.body.message} `)
+          alert(`Error! ${reservaReturn.message} `)
         }
       },
-      (error)=>console.error(error),
-      ()=> this.getHorarios()
+      (error)=>console.error(error)
     )
   }
 
